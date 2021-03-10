@@ -212,12 +212,17 @@ window.addEventListener("DOMContentLoaded",function(){
      }
 
      if( window.orientation === 0){
-       
+      motion.x = event.gamma - motion_initial.y
+      motion.y = event.beta - motion_initial.x
      }else if( window.orientation === 90 ){
        motion.x = event.beta - motion_initial.x
-       motion.y = event.gamma + motion_initial.y
+       motion.y = -event.gamma + motion_initial.y
      }else if( window.orientation === -90 ){
-
+      motion.x = -event.beta + motion_initial.x
+      motion.y = event.gamma - motion_initial.y
+     }else{
+      motion.x = -event.gamma + motion_initial.y
+      motion.y = -event.beta + motion_initial.x
      }
 
   })
