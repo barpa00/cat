@@ -204,7 +204,7 @@ window.addEventListener("DOMContentLoaded",function(){
     y: 0
   }
   
-  window.addEventListener('click', (event) =>{
+  window.addEventListener('deciveorientation', (event) =>{
     //判斷是否為第一次    
     if( !motion_initial.x && !motion_initial.y ){
       motion_initial.x = event.beta
