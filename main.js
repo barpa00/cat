@@ -133,8 +133,8 @@ window.addEventListener("DOMContentLoaded",function(){
     const motion_offset_y = motion.y * layer.z_index * motion_multiplier
 
     const offset = {
-      x: touch_offset_x + otion_offset_x,
-      y: touch_offset_y + otion_offset_y
+      x: touch_offset_x + motion_offset_x,
+      y: touch_offset_y + motion_offset_x
     }
     // console.log("offset",offset)
     return offset
