@@ -231,7 +231,7 @@ window.addEventListener("DOMContentLoaded",function(){
   })
 
 
-  window.addEventListener('touched',()=>{
+  window.addEventListener('touchend',()=>{
     enableMotion()
   })
   function enableMotion(){
@@ -239,6 +239,6 @@ window.addEventListener("DOMContentLoaded",function(){
       DeviceOrientationEvent.requestPermission()
     }
   }
-  
+
 })
 
