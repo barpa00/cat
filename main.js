@@ -203,9 +203,12 @@ window.addEventListener("DOMContentLoaded",function(){
     x: 0,
     y: 0
   }
-  
+ 
+
   window.addEventListener('deviceorientation', (event) =>{
     //判斷是否為第一次    
+    console.log(event.alpha + ' : ' + event.beta + ' : ' + event.gamma);
+
     if( !motion_initial.x && !motion_initial.y ){
       motion_initial.x = event.beta
       motion_initial.y = event.gamma
@@ -215,8 +218,8 @@ window.addEventListener("DOMContentLoaded",function(){
       motion.x = event.gamma - motion_initial.y
       motion.y = event.beta - motion_initial.x
      }else if( window.orientation === 90 ){
-       motion.x = event.beta - motion_initial.x
-       motion.y = -event.gamma + motion_initial.y
+      motion.x = event.beta - motion_initial.x
+      motion.y = -event.gamma + motion_initial.y
      }else if( window.orientation === -90 ){
       motion.x = -event.beta + motion_initial.x
       motion.y = event.gamma - motion_initial.y
@@ -228,5 +231,14 @@ window.addEventListener("DOMContentLoaded",function(){
   })
 
 
-
+  window.addEventListener('touched',()=>{
+    enableMotion()
+  })
+  function enableMotion(){
+    if(window.DeviceOrientationEvent){
+      DeviceOrientationEvent.requestPermission()
+    }
+  }
+  
 })
+
