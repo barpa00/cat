@@ -109,9 +109,9 @@ window.addEventListener("DOMContentLoaded",function(){
 
     //旋轉
     let rotate_x = ( pointer.x * -0.15 ) + ( motion.x * 1.2)
-    let rotate_y = ( pointer.y * -0.15 ) + ( motion.y * 1.2)
+    let rotate_y = ( pointer.y * 0.15 ) + ( motion.y * 1.2)
 
-    canvas.style.transform = "rotate(" + rotate_x + "," + rotate_y + ")"
+    canvas.style.transform = "rotateX(" + rotate_x + "deg) rotateY(" + rotate_y + "deg)"
 
 
     layer_list.forEach((layer,index)=>{
