@@ -106,6 +106,14 @@ window.addEventListener("DOMContentLoaded",function(){
 
   function drawCanvas(){
     context.clearRect( 0 , 0, canvas.width, canvas.height )
+
+    //旋轉
+    let rotate_x = ( pointer.x * -0.15 ) + ( motion.x * 1.2)
+    let rotate_y = ( pointer.y * -0.15 ) + ( motion.y * 1.2)
+
+    canvas.style.transform = "rotate(" + rotate_x + "," + rotate_y + ")"
+
+
     layer_list.forEach((layer,index)=>{
 
       layer.position = getOffset(layer)
