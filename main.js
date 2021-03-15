@@ -77,7 +77,7 @@ window.addEventListener("DOMContentLoaded",function(){
   {
     'image': banner,
     'src': "./catimg/banner.png",
-    'z_index': 0.75,
+    'z_index': 1.5,
     'position': { x: 0 ,y: 0 },
     'blend': null,
     'opacity': 1,
@@ -85,7 +85,7 @@ window.addEventListener("DOMContentLoaded",function(){
   {
     'image': start,
     'src': "./catimg/start.png",
-    'z_index': 1.5,
+    'z_index': 2.5,
     'position': { x: 0 ,y: 0 },
     'blend': null,
     'opacity': 0.9,
@@ -234,6 +234,7 @@ window.addEventListener("DOMContentLoaded",function(){
   window.addEventListener('touchend',()=>{
     enableMotion()
   })
+  
   function enableMotion(){
     if(window.DeviceOrientationEvent){
       DeviceOrientationEvent.requestPermission()
