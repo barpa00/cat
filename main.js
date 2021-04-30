@@ -93,7 +93,7 @@ window.addEventListener("DOMContentLoaded",function(){
   ]
 
 
-  layer_list.forEach((layer,index)=>{
+  layer_list.forEach((layer)=>{
     layer.image.onload = function(){
       load_counter += 1
       if(load_counter >= layer_list.length){
@@ -103,21 +103,18 @@ window.addEventListener("DOMContentLoaded",function(){
     }
     layer.image.src = layer.src
   })
-
+  
+  
   function drawCanvas(){
     context.clearRect( 0 , 0, canvas.width, canvas.height )
 
     //旋轉
     let rotate_x = ( pointer.x * -0.15 ) + ( motion.x * 1.2)
     let rotate_y = ( pointer.y * 0.15 ) + ( motion.y * 1.2)
-
     canvas.style.transform = "rotateX(" + rotate_x + "deg) rotateY(" + rotate_y + "deg)"
 
-
-    layer_list.forEach((layer,index)=>{
-
+    layer_list.forEach((layer)=>{
       layer.position = getOffset(layer)
-      
       if(layer.blend){
         context.globalCompositeOperation = layer.blend
       }else{
